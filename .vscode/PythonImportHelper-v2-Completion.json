@@ -1,0 +1,101 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "src.limpeza_dados",
+        "description": "src.limpeza_dados",
+        "peekOfCode": "df = pd.read_csv('assets/csv/vendas_modificado.csv')\n# Converte as datas para um formato único e ajusta as horas para o padrão HH:MM:SS\ndf['data'] = pd.to_datetime(df['data']).dt.strftime('%Y-%m-%d')\ndf['hora'] = pd.to_datetime(df['hora'], format='%H:%M:%S').dt.strftime('%H:%M:%S')\n# Certifica-se de que colunas como valor, quantidade, total e frete estejam no formato numérico adequado\ndf['valor'] = pd.to_numeric(df['valor'], errors='coerce')\ndf['quantidade'] = pd.to_numeric(df['quantidade'], errors='coerce')\ndf['total'] = pd.to_numeric(df['total'], errors='coerce')\ndf['frete'] = pd.to_numeric(df['frete'], errors='coerce')\n# Identifica registros com dados faltantes e define uma estratégia para tratá-los (preenchimento com valor padrão neste caso)",
+        "detail": "src.limpeza_dados",
+        "documentation": {}
+    },
+    {
+        "label": "df['data']",
+        "kind": 5,
+        "importPath": "src.limpeza_dados",
+        "description": "src.limpeza_dados",
+        "peekOfCode": "df['data'] = pd.to_datetime(df['data']).dt.strftime('%Y-%m-%d')\ndf['hora'] = pd.to_datetime(df['hora'], format='%H:%M:%S').dt.strftime('%H:%M:%S')\n# Certifica-se de que colunas como valor, quantidade, total e frete estejam no formato numérico adequado\ndf['valor'] = pd.to_numeric(df['valor'], errors='coerce')\ndf['quantidade'] = pd.to_numeric(df['quantidade'], errors='coerce')\ndf['total'] = pd.to_numeric(df['total'], errors='coerce')\ndf['frete'] = pd.to_numeric(df['frete'], errors='coerce')\n# Identifica registros com dados faltantes e define uma estratégia para tratá-los (preenchimento com valor padrão neste caso)\ndf.fillna({\n    'valor': 0,",
+        "detail": "src.limpeza_dados",
+        "documentation": {}
+    },
+    {
+        "label": "df['hora']",
+        "kind": 5,
+        "importPath": "src.limpeza_dados",
+        "description": "src.limpeza_dados",
+        "peekOfCode": "df['hora'] = pd.to_datetime(df['hora'], format='%H:%M:%S').dt.strftime('%H:%M:%S')\n# Certifica-se de que colunas como valor, quantidade, total e frete estejam no formato numérico adequado\ndf['valor'] = pd.to_numeric(df['valor'], errors='coerce')\ndf['quantidade'] = pd.to_numeric(df['quantidade'], errors='coerce')\ndf['total'] = pd.to_numeric(df['total'], errors='coerce')\ndf['frete'] = pd.to_numeric(df['frete'], errors='coerce')\n# Identifica registros com dados faltantes e define uma estratégia para tratá-los (preenchimento com valor padrão neste caso)\ndf.fillna({\n    'valor': 0,\n    'quantidade': 0,",
+        "detail": "src.limpeza_dados",
+        "documentation": {}
+    },
+    {
+        "label": "df['valor']",
+        "kind": 5,
+        "importPath": "src.limpeza_dados",
+        "description": "src.limpeza_dados",
+        "peekOfCode": "df['valor'] = pd.to_numeric(df['valor'], errors='coerce')\ndf['quantidade'] = pd.to_numeric(df['quantidade'], errors='coerce')\ndf['total'] = pd.to_numeric(df['total'], errors='coerce')\ndf['frete'] = pd.to_numeric(df['frete'], errors='coerce')\n# Identifica registros com dados faltantes e define uma estratégia para tratá-los (preenchimento com valor padrão neste caso)\ndf.fillna({\n    'valor': 0,\n    'quantidade': 0,\n    'total': 0,\n    'frete': 0",
+        "detail": "src.limpeza_dados",
+        "documentation": {}
+    },
+    {
+        "label": "df['quantidade']",
+        "kind": 5,
+        "importPath": "src.limpeza_dados",
+        "description": "src.limpeza_dados",
+        "peekOfCode": "df['quantidade'] = pd.to_numeric(df['quantidade'], errors='coerce')\ndf['total'] = pd.to_numeric(df['total'], errors='coerce')\ndf['frete'] = pd.to_numeric(df['frete'], errors='coerce')\n# Identifica registros com dados faltantes e define uma estratégia para tratá-los (preenchimento com valor padrão neste caso)\ndf.fillna({\n    'valor': 0,\n    'quantidade': 0,\n    'total': 0,\n    'frete': 0\n}, inplace=True)",
+        "detail": "src.limpeza_dados",
+        "documentation": {}
+    },
+    {
+        "label": "df['total']",
+        "kind": 5,
+        "importPath": "src.limpeza_dados",
+        "description": "src.limpeza_dados",
+        "peekOfCode": "df['total'] = pd.to_numeric(df['total'], errors='coerce')\ndf['frete'] = pd.to_numeric(df['frete'], errors='coerce')\n# Identifica registros com dados faltantes e define uma estratégia para tratá-los (preenchimento com valor padrão neste caso)\ndf.fillna({\n    'valor': 0,\n    'quantidade': 0,\n    'total': 0,\n    'frete': 0\n}, inplace=True)\n# Procura por duplicatas e elimina registros redundantes",
+        "detail": "src.limpeza_dados",
+        "documentation": {}
+    },
+    {
+        "label": "df['frete']",
+        "kind": 5,
+        "importPath": "src.limpeza_dados",
+        "description": "src.limpeza_dados",
+        "peekOfCode": "df['frete'] = pd.to_numeric(df['frete'], errors='coerce')\n# Identifica registros com dados faltantes e define uma estratégia para tratá-los (preenchimento com valor padrão neste caso)\ndf.fillna({\n    'valor': 0,\n    'quantidade': 0,\n    'total': 0,\n    'frete': 0\n}, inplace=True)\n# Procura por duplicatas e elimina registros redundantes\ndf.drop_duplicates(inplace=True)",
+        "detail": "src.limpeza_dados",
+        "documentation": {}
+    },
+    {
+        "label": "df['total_calculado']",
+        "kind": 5,
+        "importPath": "src.limpeza_dados",
+        "description": "src.limpeza_dados",
+        "peekOfCode": "df['total_calculado'] = df['valor'] * df['quantidade'] + df['frete']\ndf = df[df['total'] == df['total_calculado']]\n# Salva o DataFrame limpo em um novo arquivo CSV\ndf.to_csv('assets/csv/clear/dados_megasuper_vendas_limpos.csv', index=False)\n# Relatório Resumido\nrelatorio = \"\"\"\nRelatório de Limpeza de Dados\n1. Verificação e Padronização de Tipos e Formatos:\n   - Datas convertidas para o formato YYYY-MM-DD.\n   - Horas ajustadas para o padrão HH:MM:SS.",
+        "detail": "src.limpeza_dados",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "src.limpeza_dados",
+        "description": "src.limpeza_dados",
+        "peekOfCode": "df = df[df['total'] == df['total_calculado']]\n# Salva o DataFrame limpo em um novo arquivo CSV\ndf.to_csv('assets/csv/clear/dados_megasuper_vendas_limpos.csv', index=False)\n# Relatório Resumido\nrelatorio = \"\"\"\nRelatório de Limpeza de Dados\n1. Verificação e Padronização de Tipos e Formatos:\n   - Datas convertidas para o formato YYYY-MM-DD.\n   - Horas ajustadas para o padrão HH:MM:SS.\n   - Colunas 'valor', 'quantidade', 'total' e 'frete' convertidas para formato numérico.",
+        "detail": "src.limpeza_dados",
+        "documentation": {}
+    },
+    {
+        "label": "relatorio",
+        "kind": 5,
+        "importPath": "src.limpeza_dados",
+        "description": "src.limpeza_dados",
+        "peekOfCode": "relatorio = \"\"\"\nRelatório de Limpeza de Dados\n1. Verificação e Padronização de Tipos e Formatos:\n   - Datas convertidas para o formato YYYY-MM-DD.\n   - Horas ajustadas para o padrão HH:MM:SS.\n   - Colunas 'valor', 'quantidade', 'total' e 'frete' convertidas para formato numérico.\n2. Tratamento de Inconsistências:\n   - Registros com dados faltantes foram removidos.\n   - Registros duplicados foram eliminados.\n   - Coluna 'total' verificada e corrigida de acordo com a fórmula: total = valor * quantidade + frete.",
+        "detail": "src.limpeza_dados",
+        "documentation": {}
+    }
+]
